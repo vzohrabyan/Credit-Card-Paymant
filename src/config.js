@@ -5,7 +5,7 @@ const data =  [
       surname: "London",
       code: {
         main_code: 9051140212345678,
-        cvc: 111,
+        cvv: 111,
       },
       date: {
         year: 24,
@@ -19,7 +19,7 @@ const data =  [
       surname: "Doe",
       code: {
         main_code: 9011123454568901,
-        cvc: 999,
+        cvv: 999,
       },
       date: {
         year: 26,
@@ -32,8 +32,8 @@ const data =  [
       name: "Mary",
       surname: "Jane",
       code: {
-        main_code: 7711673454566901,
-        cvc: 123,
+        main_code: 4083060011226160,
+        cvv: 123,
       },
       date: {
         year: 20,
@@ -42,4 +42,5 @@ const data =  [
       balance: 990000,
     },
   ]
+  
   export default data

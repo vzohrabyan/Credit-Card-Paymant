@@ -1,14 +1,14 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import './App.scss';
-import Form from './components/form/Form';
+import Form from './components/form/CardForm';
 import Card from './components/card/Card';
+import Loading from './components/loading/Loading';
 
 function App() {
 
-  const dispatch = useDispatch();
-  const a = useSelector((state) => {return state.z.a});
-
+  const [side, setSide] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [complete, setComplete] = useState(false);
   const [inputs, setInputs] = useState({
     name: "",
     surname: "",
@@ -19,8 +19,13 @@ function App() {
 
   return (
     <div className="App">
-      <Form inputs={inputs} setInputs={setInputs} />
-      <Card inputs={inputs}  />
+      {loading ? <Loading complete={complete} /> : (
+        <>
+          <Form inputs={inputs} setInputs={setInputs} setSide={setSide} setLoading={setLoading} setComplete={setComplete}/>
+          <Card inputs={inputs}  side={side} setSide={setSide}/>
+        </>
+      )}
+      
     </div>
   );
 }
